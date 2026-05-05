@@ -106,13 +106,8 @@ class ProfileVC: UIViewController {
 
         alert.addAction(UIAlertAction(title: AppStrings.logoutTitle.localized, style: .destructive) { [weak self] _ in
             UserDefaultsConfig.isAuthorization = false
+            UserDefaultsConfig.isReturningFromLogout = true
             CoreDataManager.shared.clearAllCache()
-
-            if let launchVC = self?.navigationController?.viewControllers
-                .first(where: { $0 is AnimatedLaunchVC }) as? AnimatedLaunchVC {
-                launchVC.isReturningFromLogout = true
-            }
-
             UIApplication.shared.logoutAppUser()
             UIApplication.shared.manageLogin()
         })

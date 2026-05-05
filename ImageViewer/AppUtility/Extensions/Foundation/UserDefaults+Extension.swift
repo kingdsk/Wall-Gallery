@@ -22,6 +22,7 @@ extension UserDefaults {
         static let userName = "userName"
         static let userEmail = "userEmail"
         static let profilePhoto = "profilePhoto"
+        static let isReturningFromLogout = "isReturningFromLogout"
     }
 }
 

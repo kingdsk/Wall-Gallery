@@ -51,6 +51,7 @@ class AnimatedLaunchVC: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.showGoogleLoginButton()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -64,7 +65,6 @@ class AnimatedLaunchVC: UIViewController {
         self.setupViewModelObserver()
         self.applyStyle()
         self.startImageRotation()
-        self.showGoogleLoginButton()
         self.setupGoogleLoginTap()
     }
 
@@ -108,9 +108,16 @@ class AnimatedLaunchVC: UIViewController {
     //MARK: - Show Google Login Button
     //------------------------------------------------------
     private func showGoogleLoginButton() {
-        let delay: Double = isReturningFromLogout ? 0.0 : 4.0
+        if UserDefaultsConfig.isReturningFromLogout {
+            // Show Google login immediately without any delay or animation
+            UserDefaultsConfig.isReturningFromLogout = false
+            self.vwGoogleLogin.isHidden = false
+            self.vwGoogleLogin.alpha    = 1
+            self.vwGoogleLogin.transform = .identity
+            return
+        }
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + delay) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) { [weak self] in
             guard let self = self else { return }
 
             if UserDefaultsConfig.isAuthorization {
@@ -179,7 +186,7 @@ class AnimatedLaunchVC: UIViewController {
     //------------------------------------------------------
     func navigateToHome(withMessage: Bool = true) {
         if withMessage {
-            Alert.shared.showSnackBar("Login successful")
+            Alert.shared.showSnackBar(AppStrings.loginSuccessful.localized)
         }
         let homeVC = HomeVC.instantiate(fromAppStoryboard: .home)
         UserDefaultsConfig.isAuthorization = true

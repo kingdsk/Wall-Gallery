@@ -1,2 +1,5 @@
 Pods/
 ImageViewer/WebService/AWSUploadService/AWSUploadConfigration.swift
+*.xcworkspace/xcuserdata/
+*.xcuserstate
+*.xcbkptlist

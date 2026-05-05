@@ -42,7 +42,7 @@ extension UIApplication {
         let defaults = UserDefaults.standard
         let dictionary = defaults.dictionaryRepresentation()
         dictionary.keys.forEach { key in
-            if key != UserDefaults.Keys.authorization && key != UserDefaults.Keys.deviceToken {
+            if key != UserDefaults.Keys.authorization && key != UserDefaults.Keys.deviceToken && key != UserDefaults.Keys.isReturningFromLogout {
                 defaults.removeObject(forKey: key)
             }
         }

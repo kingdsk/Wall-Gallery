@@ -51,4 +51,7 @@ struct UserDefaultsConfig {
     
     @UserDefault(UserDefaults.Keys.profilePhoto, defaultValue: "")
     static var profilePhoto: String
+    
+    @UserDefault(UserDefaults.Keys.isReturningFromLogout, defaultValue: false)
+    static var isReturningFromLogout: Bool
 }
