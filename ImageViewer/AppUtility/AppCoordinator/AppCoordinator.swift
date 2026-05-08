@@ -40,7 +40,6 @@ class AppCoordinator: NSObject {
         //        GIDSignIn.sharedInstance().clientID = AppCredential.googleClientID.rawValue
         
         // AWS Image upload configration
-        AWSUploadManager.shared.configure()
         
         //IQKeyboard Setup
         Task { @MainActor in
