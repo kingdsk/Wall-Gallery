@@ -21,7 +21,11 @@ class DeviceManager: NSObject {
     
     /// Return true if device is simulator
     var isSimulator: Bool {
-        return TARGET_OS_SIMULATOR == 1
+#if targetEnvironment(simulator)
+        return true
+#else
+        return false
+#endif
     }
     
     /// Get device OS version
@@ -67,7 +71,7 @@ class DeviceManager: NSObject {
             return identifier + String(UnicodeScalar(UInt8(value)))
         }
         
-        #if os(iOS)
+#if os(iOS)
         switch identifier {
         case "iPod5,1":                                 return "iPod touch (5th generation)"
         case "iPod7,1":                                 return "iPod touch (6th generation)"
@@ -123,13 +127,13 @@ class DeviceManager: NSObject {
         default:                                        return identifier
         }
         
-        #elseif os(tvOS)
+#elseif os(tvOS)
         switch identifier {
         case "AppleTV5,3": return appleTV4
         case "AppleTV6,2": return appleTV4K
         case "i386", "x86_64": return "Simulator"
         default: return identifier
         }
-        #endif
+#endif
     }
 }

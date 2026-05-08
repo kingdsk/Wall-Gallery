@@ -5,6 +5,8 @@
 //
 
 import Foundation
+import UIKit
+
 enum Vibration {
     case error
     case success

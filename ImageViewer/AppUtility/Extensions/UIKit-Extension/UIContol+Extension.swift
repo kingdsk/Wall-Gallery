@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 extension UIControl {
     func addAction(for controlEvents: UIControl.Event, action: @escaping () -> ()) {
