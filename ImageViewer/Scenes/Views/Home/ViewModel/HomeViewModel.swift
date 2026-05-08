@@ -71,7 +71,6 @@ final class HomeViewModel {
                     self.onPhotosLoaded?(self.allPhotos)
 
                 case .failure(let error):
-                    print("❌ ViewModel API Error:", error.localizedDescription)
                     let cached = CoreDataManager.shared.fetchPhotos(forPage: targetPage)
                     if !cached.isEmpty {
                         self.onCachedPhotosLoaded?(cached)

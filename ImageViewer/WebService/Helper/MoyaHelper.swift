@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import QorumLogs
 import Moya
 import Alamofire
 
@@ -141,14 +140,14 @@ extension ApiManager {
     /// - Parameter parameters: Dictionary request parameter
     func manageDebugRequest(parameters: [String:Any]?) {
         let encyptedData = JSON(debugCryptoLib.encryptPlainText(with: JSON.init(rawValue: parameters as Any)?.rawString(), key: ApiKeys.encrypt(.secretKey).value, iv: ApiKeys.encrypt(.iv).value) as Any).stringValue
-        QLPlusLine()
-        QL1("\n==============================Parameters==============================\n")
-        QL1(JSON(parameters as Any).dictionaryValue)
-        QL1("\n==================================URL=================================\n")
-        QL1(baseURL.appendingPathComponent(self.path).absoluteString)
-        QL1("\n==============================Encrypted Parameters==============================\n")
-        QL1(encyptedData)
-        QLPlusLine()
+        print("================================================================")
+        print("\n==============================Parameters==============================\n")
+        print(JSON(parameters as Any).dictionaryValue)
+        print("\n==================================URL=================================\n")
+        print(baseURL.appendingPathComponent(self.path).absoluteString)
+        print("\n==============================Encrypted Parameters==============================\n")
+        print(encyptedData)
+        print("================================================================")
     }
     
     /// Print debug API response with encrypted and decrypted formate.
@@ -156,12 +155,12 @@ extension ApiManager {
     ///   - encryptedString: Encrypted respons string
     ///   - responseDic: Response JSON dictionary
     func manageDebugResponse(encryptedString: String, responseDic: JSON) {
-        QLPlusLine()
-        QL1("\n==============================Encrypted Response==============================\n")
-        QL1(encryptedString)
-        QL1("\n==============================Decrypted Response==============================\n")
-        QL1(responseDic)
-        QLPlusLine()
+        print("================================================================")
+        print("\n==============================Encrypted Response==============================\n")
+        print(encryptedString)
+        print("\n==============================Decrypted Response==============================\n")
+        print(responseDic)
+        print("================================================================")
     }
     
     /// Print and show API error message
@@ -170,7 +169,7 @@ extension ApiManager {
     ///   - error: API Error
     ///   - isShowAlert: Flag for show API error alert. Default false.
     func manageErrors(apiName: String, error: Error, isShowAlert: Bool = false) {
-        QL4("Error \(error.localizedDescription) in method \(apiName)")
+        print("❌ Error \(error.localizedDescription) in method \(apiName)")
         if isShowAlert {
             //FIXME: Show Error Alert here
         }
@@ -193,8 +192,8 @@ extension ApiManager {
     
     /// Cancel all request for given end point
     /// - Parameter endpoint: API end point for cancel request
-    func cancelRequest(endpoint : ApiEndPoints)  {
-        if let task = (self.requests.filter{ $0.endPoint.methodName == endpoint.methodName }).first{
+    func cancelRequest(endpoint: ApiEndPoints) {
+        if let task = (self.requests.filter { $0.endPoint.methodName == endpoint.methodName }).first {
             task.cancellable.cancel()
         }
     }

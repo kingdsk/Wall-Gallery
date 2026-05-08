@@ -13,9 +13,6 @@ import UIKit
 // This is for handel optional data
 @_exported import SwiftyJSON
 
-// This is for logs
-import QorumLogs
-
 // This is for app update
 import Siren
 
@@ -46,21 +43,20 @@ class AppCoordinator: NSObject {
         AWSUploadManager.shared.configure()
         
         //IQKeyboard Setup
-        self.setUpIQKeyBoardManager()
+        Task { @MainActor in
+            self.setUpIQKeyBoardManager()
+        }
         
         //Push setup
 //        AppDelegate.shared.registerForNotification()
         
         //Network Observer
         ReachabilityManager.shared.startObserving()
-        
-        QorumLogs.enabled = true
     }
     
-    private func setUpIQKeyBoardManager() {
-        IQKeyboardManager.shared.enable = true
-        IQKeyboardManager.shared.enableAutoToolbar = true
-        IQKeyboardManager.shared.keyboardDistanceFromTextField = 5
-        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+    @MainActor private func setUpIQKeyBoardManager() {
+        IQKeyboardManager.shared.isEnabled = true
+        IQKeyboardManager.shared.resignOnTouchOutside = true
+        IQKeyboardManager.shared.keyboardDistance = 10
     }
 }

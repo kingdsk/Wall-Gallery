@@ -134,8 +134,6 @@ extension UIViewController {
     func showSnackbar(message: String,
                       emoji: String    = "📡",
                       duration: Double = 2.5) {
-
-        // Avoid duplicate snackbars
         guard view.viewWithTag(9991) == nil else { return }
 
         let snack                = UILabel()

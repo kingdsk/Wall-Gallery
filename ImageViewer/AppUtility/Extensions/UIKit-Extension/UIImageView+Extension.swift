@@ -8,7 +8,6 @@
 
 import UIKit
 import ImageIO
-import SimpleImageViewer
 import SDWebImage
 
 extension UIImageView {
@@ -31,33 +30,4 @@ extension UIImageView {
           }
           sd_setImage(with: imageURL, placeholderImage: placeholder, options:[.retryFailed, .refreshCached], completed: completed)
       }
-    
-    /**
-     Tap to open full screen image preview
-     - Parameter image: UIImage for preview
-     */
-    func tapToZoom(with image: UIImage? = nil) {
-        self.addTapGestureRecognizer {
-            self.zoomImage(with: image)
-        }
-    }
-    
-    /**
-     Full screen image preview
-     - Parameter image: UIImage for preview
-     */
-    func zoomImage(with image: UIImage?) {
-        
-        if let _ = self.image {
-            let configuration = ImageViewerConfiguration { config in
-                config.imageView = self
-                if image != nil {
-                    config.image = image
-                }
-            }
-            let imageViewerController = ImageViewerController(configuration: configuration)
-            imageViewerController.navigationController?.navigationBar.isHidden = false
-            UIApplication.topViewController()?.present(imageViewerController, animated: true, completion: nil)
-        }
-    }
 }

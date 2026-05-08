@@ -47,13 +47,19 @@ struct AppStrings {
     static let wallGalleryTitle = "Wall Gallery"
     static let wallgalleryDescription = "Access thousands of curated high-resoultion images from aroung the world"
     static let signInWithGoogle = "Signin with Google"
+    static let loginSuccessful = "Login successful!!"
     
-    //Home Screen
-    static let discoverTitle = "Discover"
-    static let highResolutionTitle = "Hight-resolution images"
-    static let liveFeedTitle = "Live Feed"
-    static let offlineTitle = "Offline Feed"
-    static let photographerTitle = "Photographer"
+    // Home Screen
+    static let discoverTitle             = "Discover"
+    static let highResolutionTitle       = "High-resolution images"
+    static let liveFeedTitle             = "Live Feed"
+    static let offlineTitle              = "Offline Feed"
+    static let photographerTitle         = "Photographer"
+    static let backOnlineMessage         = "Back online! Loading fresh feed."
+    static let offlineSnackMessage       = "You're offline. Showing cached images."
+    static let noInternetNoCacheMessage  = "You're offline and no cached images are available.\nPlease connect to the internet."
+    static let stillNoInternetMessage    = "Still no internet.\nPlease check your connection and try again."
+    static let retryTitle                = "Retry"
     
     //Profile Screen
     static let nameTitle = "Name"

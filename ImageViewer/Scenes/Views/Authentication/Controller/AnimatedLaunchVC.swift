@@ -24,8 +24,6 @@ class AnimatedLaunchVC: UIViewController {
     //------------------------------------------------------
     //MARK: - Class Variable -
     //------------------------------------------------------
-    var isReturningFromLogout: Bool = false
-
     var arrRotatingImages = [UIImage(resource: .launchScreenOne),
                              UIImage(resource: .launchScreenTwo),
                              UIImage(resource: .launchScreenThree),

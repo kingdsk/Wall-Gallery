@@ -153,8 +153,12 @@ class HomeVC: UIViewController {
     }
 
     private func applyStyle() {
-        self.lblDiscover.font(name: .medium, size: 18.0).textColor(color: .black).text          = AppStrings.discoverTitle.localized
-        self.lblhighResImages.font(name: .medium, size: 16.0).textColor(color: .colorDarkGray).text = AppStrings.highResolutionTitle.localized
+        self.lblDiscover.font(name: .medium, size: 18.0)
+            .textColor(color: .black)
+            .text = AppStrings.discoverTitle.localized
+        self.lblhighResImages.font(name: .medium, size: 16.0)
+            .textColor(color: .colorDarkGray)
+            .text = AppStrings.highResolutionTitle.localized
     }
 
     //------------------------------------------------------
@@ -173,18 +177,20 @@ class HomeVC: UIViewController {
                     self.colImagesData.setContentOffset(.zero, animated: false)
                     self.viewModel.resetPagination()
                     self.viewModel.fetchPhotos(page: 1)
-                    self.showSnackbar(message: "Back online! Loading fresh feed.", emoji: "✅")
+                    self.showSnackbar(message: AppStrings.backOnlineMessage.localized,
+                                      emoji: "✅")
 
                 } else if !isConnected && !self.isOfflineMode {
                     self.isOfflineMode = true
                     let cached = CoreDataManager.shared.fetchAllPhotos()
                     if cached.isEmpty {
-                        self.showEmptyState(message: "You're offline and no cached images are available.\nPlease connect to the internet.")
+                        self.showEmptyState(message: AppStrings.noInternetNoCacheMessage.localized)
                     } else {
                         self.cachedPhotos = cached
                         self.hideEmptyState()
                         self.colImagesData.reloadData()
-                        self.showSnackbar(message: "You're offline. Showing cached images.", emoji: "📡")
+                        self.showSnackbar(message: AppStrings.offlineSnackMessage.localized,
+                                          emoji: "📡")
                     }
                 }
             }
@@ -204,7 +210,7 @@ class HomeVC: UIViewController {
                     .borderColor(color: .textCompletedOrder, borderWidth: 1.0)
                     .backGroundColor(color: .completedOrder)
                 self.lblLiveFeed
-                    .font(name: .light, size: 12.0)
+                    .font(name: .medium, size: 12.0)
                     .textColor(color: .textCompletedOrder)
                     .text = AppStrings.liveFeedTitle.localized
             } else {
@@ -213,8 +219,8 @@ class HomeVC: UIViewController {
                     .borderColor(color: .systemYellow, borderWidth: 1.0)
                     .backGroundColor(color: UIColor.systemYellow.withAlphaComponent(0.15))
                 self.lblLiveFeed
-                    .font(name: .light, size: 12.0)
-                    .textColor(color: .systemYellow)
+                    .font(name: .medium, size: 12.0)
+                    .textColor(color: .color1)
                     .text = AppStrings.offlineTitle.localized
             }
             UIView.animate(withDuration: 0.3) {
@@ -224,7 +230,7 @@ class HomeVC: UIViewController {
     }
 
     //------------------------------------------------------
-    //MARK: - ViewModel Observer Setup -
+    //MARK: - ViewModel Observer -
     //------------------------------------------------------
     private func setupViewModelObserver() {
 
@@ -271,11 +277,11 @@ class HomeVC: UIViewController {
         label.font               = UIFont.systemFont(ofSize: 15, weight: .medium)
         label.translatesAutoresizingMaskIntoConstraints = false
 
-        let retryBtn             = UIButton(type: .system)
-        retryBtn.setTitle("Retry", for: .normal)
+        let retryBtn                    = UIButton(type: .system)
+        retryBtn.setTitle(AppStrings.retryTitle.localized, for: .normal)
         retryBtn.setTitleColor(.white, for: .normal)
-        retryBtn.backgroundColor    = .systemBlue
-        retryBtn.layer.cornerRadius = 10
+        retryBtn.backgroundColor        = .systemBlue
+        retryBtn.layer.cornerRadius     = 10
         retryBtn.translatesAutoresizingMaskIntoConstraints = false
         retryBtn.addTarget(self, action: #selector(retryTapped), for: .touchUpInside)
 
@@ -308,7 +314,7 @@ class HomeVC: UIViewController {
 
     @objc private func retryTapped() {
         guard NetworkReachability.shared.isConnected else {
-            showEmptyState(message: "Still no internet.\nPlease check your connection and try again.")
+            showEmptyState(message: AppStrings.stillNoInternetMessage.localized)
             return
         }
         hideEmptyState()
@@ -354,7 +360,7 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
                         forItemAt indexPath: IndexPath) {
         guard !isOfflineMode else {
             if indexPath.row == cachedPhotos.count - 3 {
-                showSnackbar(message: "You're offline. Showing cached images.")
+                showSnackbar(message: AppStrings.offlineSnackMessage.localized)
             }
             return
         }
