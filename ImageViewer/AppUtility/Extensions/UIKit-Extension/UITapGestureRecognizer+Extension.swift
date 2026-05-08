@@ -8,11 +8,24 @@
 
 import UIKit
 
+// MARK: - ClosureSleeve (inlined from UIControl+Extension)
+private var AssociatedObjectHandle: UInt8 = 0
+
+private class ClosureSleeve {
+    let closure: () -> ()
+    init(attachTo: AnyObject, closure: @escaping () -> ()) {
+        self.closure = closure
+        objc_setAssociatedObject(attachTo, &AssociatedObjectHandle, self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+    }
+    @objc func invoke() { closure() }
+}
+
 extension UITapGestureRecognizer {
     func addAction(for target: Any, action: @escaping () -> ()) {
         let sleeve = ClosureSleeve(attachTo: self, closure: action)
         addTarget(sleeve, action: #selector(ClosureSleeve.invoke))
     }
+
     
     func didTapAttributedTextInLabel(label: UILabel, inRange targetRange: NSRange) -> Bool {
         // Create instances of NSLayoutManager, NSTextContainer and NSTextStorage

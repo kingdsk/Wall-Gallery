@@ -37,7 +37,6 @@ extension UIApplication {
     
     /// Logout user from app and clear all user data from user default
     func logoutAppUser() {
-        UserModel.removeCurrentUser()
         // Clear all the user default data from the app, expect remember me data
         let defaults = UserDefaults.standard
         let dictionary = defaults.dictionaryRepresentation()

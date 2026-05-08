@@ -65,16 +65,6 @@ extension UINavigationController : UIGestureRecognizerDelegate {
     }
     
     public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        if self.viewControllers.count <= 1 {
-            return false
-        }
-        if let topVC = UIApplication.topViewController() {
-            for vc in kDisablePopBackVCS{
-                if topVC.isKind(of: vc as! AnyClass){
-                    return false
-                }
-            }
-        }
-        return true
+        return self.viewControllers.count > 1
     }
 }

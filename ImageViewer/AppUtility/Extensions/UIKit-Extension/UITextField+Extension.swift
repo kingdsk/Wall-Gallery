@@ -10,7 +10,6 @@ import UIKit
 
 var kRegex = "kRegex"
 var kdefaultCharacter = "kdefaultCharacter"
-var kPatternCharacter = "kPatternCharacter"
 var kMaxLength  =   "kMaxLength"
 
 
@@ -60,29 +59,7 @@ extension UITextField: UITextFieldDelegate {
         }
     }
     
-    var patterText : String? {
-        set {
-            self.delegate = self
-            objc_setAssociatedObject(self, &kPatternCharacter, newValue, .OBJC_ASSOCIATION_RETAIN)
-            self.addTarget(self, action: #selector(self.textDidChange(_:)), for: .editingChanged)
-            if let pattern = self.patterText , !self.text!.isEmpty {
-                self.text = self.text!.applyPatternOnNumbers(pattern: pattern, replacmentCharacter: "5")
-            }
-        }
-        get {
-            return objc_getAssociatedObject(self, &kPatternCharacter) as? String
-        }
-    }
-    
-    @objc func textDidChange(_ textField : UITextField){
-        if let pattern = self.patterText , self.text!.count < pattern.count {
-            self.text = self.text!.applyPatternOnNumbers(pattern: pattern, replacmentCharacter: "5")
-        }
-        else {
-            self.resignFirstResponder()
-        }
-    }
-    
+
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         let newLength = textField.text!.utf16.count + string.utf16.count - range.length
@@ -116,9 +93,6 @@ extension UITextField: UITextFieldDelegate {
         }
         
         if let length = self.maxLength , length != 0 , newLength > length{
-            return false
-        }
-        if let pattern = self.patterText , newLength > pattern.count {
             return false
         }
         

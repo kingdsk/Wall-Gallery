@@ -1,5 +1,5 @@
 {
-  "originHash" : "f17eb85110355c682bde21548f3d302e6d0fc6ba5b24b989914c1597d741627e",
+  "originHash" : "05ee32c6c9e17cc4648e9344327bbe7be87577bb1baa0cdde6a5b1b15ce82793",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -8,15 +8,6 @@
       "state" : {
         "revision" : "bbe8b69694d7873315fd3a4ad41efe043e1c07c5",
         "version" : "1.2024072200.0"
-      }
-    },
-    {
-      "identity" : "alamofire",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Alamofire/Alamofire.git",
-      "state" : {
-        "revision" : "7595cbcf59809f9977c5f6378500de2ad73b7ddb",
-        "version" : "5.12.0"
       }
     },
     {
@@ -35,15 +26,6 @@
       "state" : {
         "revision" : "145104f5ea9d58ae21b60add007c33c1cc0c948e",
         "version" : "2.0.0"
-      }
-    },
-    {
-      "identity" : "aws-sdk-ios-spm",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/aws-amplify/aws-sdk-ios-spm",
-      "state" : {
-        "revision" : "f2e9fbed08dd14a962f8d62d7e302d73b9ecb429",
-        "version" : "2.41.0"
       }
     },
     {
@@ -137,102 +119,12 @@
       }
     },
     {
-      "identity" : "iqkeyboardcore",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/hackiftekhar/IQKeyboardCore.git",
-      "state" : {
-        "revision" : "6501e93b03161ce1c9355d2d689bad91c534104e",
-        "version" : "1.0.8"
-      }
-    },
-    {
-      "identity" : "iqkeyboardmanager",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/hackiftekhar/IQKeyboardManager",
-      "state" : {
-        "revision" : "5e15518eaa4966527140aeeae96dc306f96cf7b8",
-        "version" : "8.0.2"
-      }
-    },
-    {
-      "identity" : "iqkeyboardnotification",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/hackiftekhar/IQKeyboardNotification.git",
-      "state" : {
-        "revision" : "08bdc90e7db64ac88f51da5dc9e82f4c247e7057",
-        "version" : "1.0.6"
-      }
-    },
-    {
-      "identity" : "iqkeyboardreturnmanager",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/hackiftekhar/IQKeyboardReturnManager.git",
-      "state" : {
-        "revision" : "495f694a6e62e431d776b4926a18fc26c62db317",
-        "version" : "1.0.6"
-      }
-    },
-    {
-      "identity" : "iqkeyboardtoolbar",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/hackiftekhar/IQKeyboardToolbar.git",
-      "state" : {
-        "revision" : "9fef421f6fb39a3e0495f0004f9111b8eaaf0e69",
-        "version" : "1.1.3"
-      }
-    },
-    {
-      "identity" : "iqkeyboardtoolbarmanager",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/hackiftekhar/IQKeyboardToolbarManager.git",
-      "state" : {
-        "revision" : "9907fa3ef1f1aec26cb11ea752c96ef62359e251",
-        "version" : "1.1.5"
-      }
-    },
-    {
-      "identity" : "iqtextinputviewnotification",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/hackiftekhar/IQTextInputViewNotification.git",
-      "state" : {
-        "revision" : "723784a2197121bb76a940cc6d79fd2fa6c23f43",
-        "version" : "1.0.9"
-      }
-    },
-    {
-      "identity" : "iqtextview",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/hackiftekhar/IQTextView.git",
-      "state" : {
-        "revision" : "76f514eba5218bdf67659168ba227c77da5f75fe",
-        "version" : "1.0.5"
-      }
-    },
-    {
       "identity" : "leveldb",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/leveldb.git",
       "state" : {
         "revision" : "a0bc79961d7be727d258d33d5a6b2f1023270ba1",
         "version" : "1.22.5"
-      }
-    },
-    {
-      "identity" : "lottie-ios",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/airbnb/lottie-ios",
-      "state" : {
-        "revision" : "b4bd0604ded9574807f41b4004b57dd1226a30a4",
-        "version" : "3.5.0"
-      }
-    },
-    {
-      "identity" : "moya",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Moya/Moya",
-      "state" : {
-        "revision" : "c263811c1f3dbf002be9bd83107f7cdc38992b26",
-        "version" : "15.0.3"
       }
     },
     {
@@ -254,24 +146,6 @@
       }
     },
     {
-      "identity" : "reactiveswift",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ReactiveCocoa/ReactiveSwift.git",
-      "state" : {
-        "revision" : "c43bae3dac73fdd3cb906bd5a1914686ca71ed3c",
-        "version" : "6.7.0"
-      }
-    },
-    {
-      "identity" : "rxswift",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ReactiveX/RxSwift.git",
-      "state" : {
-        "revision" : "132aea4f236ccadc51590b38af0357a331d51fa2",
-        "version" : "6.10.2"
-      }
-    },
-    {
       "identity" : "sdwebimage",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SDWebImage/SDWebImage",
@@ -281,30 +155,12 @@
       }
     },
     {
-      "identity" : "siren",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ArtSabintsev/Siren",
-      "state" : {
-        "revision" : "6139af3394bc3635c6c8d5255339796feaa7d1a0",
-        "version" : "6.1.3"
-      }
-    },
-    {
       "identity" : "swift-protobuf",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-protobuf.git",
       "state" : {
         "revision" : "81558271e243f8f47dfe8e9fdd55f3c2b5413f68",
         "version" : "1.37.0"
-      }
-    },
-    {
-      "identity" : "swiftyjson",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/SwiftyJSON/SwiftyJSON",
-      "state" : {
-        "revision" : "af76cf3ef710b6ca5f8c05f3a31307d44a3c5828",
-        "version" : "5.0.2"
       }
     }
   ],

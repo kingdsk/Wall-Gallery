@@ -7,14 +7,7 @@
 
 import UIKit
 
-// This is for handel keyboard
-@_exported import IQKeyboardManagerSwift
 
-// This is for handel optional data
-@_exported import SwiftyJSON
-
-// This is for app update
-import Siren
 
 class AppCoordinator: NSObject {
     
@@ -41,21 +34,10 @@ class AppCoordinator: NSObject {
         
         // AWS Image upload configration
         
-        //IQKeyboard Setup
-        Task { @MainActor in
-            self.setUpIQKeyBoardManager()
-        }
-        
         //Push setup
 //        AppDelegate.shared.registerForNotification()
         
         //Network Observer
         ReachabilityManager.shared.startObserving()
-    }
-    
-    @MainActor private func setUpIQKeyBoardManager() {
-        IQKeyboardManager.shared.isEnabled = true
-        IQKeyboardManager.shared.resignOnTouchOutside = true
-        IQKeyboardManager.shared.keyboardDistance = 10
     }
 }

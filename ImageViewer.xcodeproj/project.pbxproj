@@ -7,19 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D72C1A52FADB9B600B52A0C /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5D72C1A42FADB9B600B52A0C /* IQKeyboardManagerSwift */; };
-		5D72C1A82FADB9D500B52A0C /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 5D72C1A72FADB9D500B52A0C /* SwiftyJSON */; };
-		5D72C1AB2FADBA0100B52A0C /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 5D72C1AA2FADBA0100B52A0C /* Moya */; };
 		5D72C1AE2FADBA2700B52A0C /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 5D72C1AD2FADBA2700B52A0C /* SDWebImage */; };
 		5D72C1B12FADBA6D00B52A0C /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5D72C1B02FADBA6D00B52A0C /* SDWebImageMapKit */; };
-		5D72C1B42FADBA8800B52A0C /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5D72C1B32FADBA8800B52A0C /* Lottie */; };
 		5D72C57F2FADBE0F00B52A0C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5D72C57E2FADBE0F00B52A0C /* FirebaseAuth */; };
 		5D72C5812FADBE0F00B52A0C /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 5D72C5802FADBE0F00B52A0C /* FirebaseCore */; };
 		5D72C5842FADBE7C00B52A0C /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 5D72C5832FADBE7C00B52A0C /* GoogleSignIn */; };
 		5D72C5862FADBE7C00B52A0C /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5D72C5852FADBE7C00B52A0C /* GoogleSignInSwift */; };
-		5D72C5892FADBEBF00B52A0C /* Siren in Frameworks */ = {isa = PBXBuildFile; productRef = 5D72C5882FADBEBF00B52A0C /* Siren */; };
-		5D72C58E2FADBF7100B52A0C /* AWSCore in Frameworks */ = {isa = PBXBuildFile; productRef = 5D72C58D2FADBF7100B52A0C /* AWSCore */; };
-		5D72C5902FADBF7100B52A0C /* AWSS3 in Frameworks */ = {isa = PBXBuildFile; productRef = 5D72C58F2FADBF7100B52A0C /* AWSS3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,18 +45,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D72C5892FADBEBF00B52A0C /* Siren in Frameworks */,
-				5D72C1A82FADB9D500B52A0C /* SwiftyJSON in Frameworks */,
 				5D72C1B12FADBA6D00B52A0C /* SDWebImageMapKit in Frameworks */,
-				5D72C5902FADBF7100B52A0C /* AWSS3 in Frameworks */,
-				5D72C58E2FADBF7100B52A0C /* AWSCore in Frameworks */,
-				5D72C1A52FADB9B600B52A0C /* IQKeyboardManagerSwift in Frameworks */,
 				5D72C1AE2FADBA2700B52A0C /* SDWebImage in Frameworks */,
-				5D72C1AB2FADBA0100B52A0C /* Moya in Frameworks */,
 				5D72C5862FADBE7C00B52A0C /* GoogleSignInSwift in Frameworks */,
 				5D72C57F2FADBE0F00B52A0C /* FirebaseAuth in Frameworks */,
 				5D72C5812FADBE0F00B52A0C /* FirebaseCore in Frameworks */,
-				5D72C1B42FADBA8800B52A0C /* Lottie in Frameworks */,
 				5D72C5842FADBE7C00B52A0C /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,15 +129,9 @@
 			mainGroup = 5D9FF7952FA85F4F0011FF66;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				5D72C1A32FADB9B600B52A0C /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
-				5D72C1A62FADB9D500B52A0C /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
-				5D72C1A92FADBA0100B52A0C /* XCRemoteSwiftPackageReference "Moya" */,
 				5D72C1AC2FADBA2700B52A0C /* XCRemoteSwiftPackageReference "SDWebImage" */,
-				5D72C1B22FADBA8800B52A0C /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				5D72C57D2FADBE0F00B52A0C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				5D72C5822FADBE7C00B52A0C /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
-				5D72C5872FADBEBF00B52A0C /* XCRemoteSwiftPackageReference "Siren" */,
-				5D72C58C2FADBF7100B52A0C /* XCRemoteSwiftPackageReference "aws-sdk-ios-spm" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 5D9FF79F2FA85F4F0011FF66 /* Products */;
@@ -399,44 +379,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5D72C1A32FADB9B600B52A0C /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 8.0.2;
-			};
-		};
-		5D72C1A62FADB9D500B52A0C /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.2;
-			};
-		};
-		5D72C1A92FADBA0100B52A0C /* XCRemoteSwiftPackageReference "Moya" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Moya/Moya";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 15.0.3;
-			};
-		};
 		5D72C1AC2FADBA2700B52A0C /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.21.7;
-			};
-		};
-		5D72C1B22FADBA8800B52A0C /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/airbnb/lottie-ios";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.5.0;
 			};
 		};
 		5D72C57D2FADBE0F00B52A0C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
@@ -455,40 +403,9 @@
 				minimumVersion = 9.1.0;
 			};
 		};
-		5D72C5872FADBEBF00B52A0C /* XCRemoteSwiftPackageReference "Siren" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ArtSabintsev/Siren";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.1.3;
-			};
-		};
-		5D72C58C2FADBF7100B52A0C /* XCRemoteSwiftPackageReference "aws-sdk-ios-spm" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/aws-amplify/aws-sdk-ios-spm";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.41.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5D72C1A42FADB9B600B52A0C /* IQKeyboardManagerSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5D72C1A32FADB9B600B52A0C /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
-			productName = IQKeyboardManagerSwift;
-		};
-		5D72C1A72FADB9D500B52A0C /* SwiftyJSON */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5D72C1A62FADB9D500B52A0C /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
-			productName = SwiftyJSON;
-		};
-		5D72C1AA2FADBA0100B52A0C /* Moya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5D72C1A92FADBA0100B52A0C /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = Moya;
-		};
 		5D72C1AD2FADBA2700B52A0C /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5D72C1AC2FADBA2700B52A0C /* XCRemoteSwiftPackageReference "SDWebImage" */;
@@ -498,11 +415,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5D72C1AC2FADBA2700B52A0C /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImageMapKit;
-		};
-		5D72C1B32FADBA8800B52A0C /* Lottie */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5D72C1B22FADBA8800B52A0C /* XCRemoteSwiftPackageReference "lottie-ios" */;
-			productName = Lottie;
 		};
 		5D72C57E2FADBE0F00B52A0C /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -523,21 +435,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5D72C5822FADBE7C00B52A0C /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignInSwift;
-		};
-		5D72C5882FADBEBF00B52A0C /* Siren */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5D72C5872FADBEBF00B52A0C /* XCRemoteSwiftPackageReference "Siren" */;
-			productName = Siren;
-		};
-		5D72C58D2FADBF7100B52A0C /* AWSCore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5D72C58C2FADBF7100B52A0C /* XCRemoteSwiftPackageReference "aws-sdk-ios-spm" */;
-			productName = AWSCore;
-		};
-		5D72C58F2FADBF7100B52A0C /* AWSS3 */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5D72C58C2FADBF7100B52A0C /* XCRemoteSwiftPackageReference "aws-sdk-ios-spm" */;
-			productName = AWSS3;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

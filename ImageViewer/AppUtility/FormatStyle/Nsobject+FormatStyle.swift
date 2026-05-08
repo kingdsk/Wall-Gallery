@@ -188,27 +188,5 @@ extension FormatStyle where Self: NSObject {
     
 }
 
-//MARK:- Apply Theme
-extension FormatStyle where Self: UIView {
-    
-    @discardableResult func applyTheme(themeStyle: Theme) -> Self {
-        
-        let theme = themeStyle.theme
-        
-        if let color = theme.textColor {
-            self.textColor(color: color)
-        }
-
-        if let backGroundColor = theme.backGroundColor {
-            (self as UIView).backGroundColor(color: backGroundColor)
-        }
-        
-        if let fontName = theme.fontName {
-            self.font(name: fontName, size: theme.fontSize)
-        }
-        
-        return self
-    }
-}
 
 
